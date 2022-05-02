@@ -1,8 +1,3 @@
-body {
-    min-width: 360px;
-    margin: auto;
-}
-
 .optgroup-1.selected.active,
 .bootstrap-select .dropdown-toggle:focus {
     outline: none !important;
