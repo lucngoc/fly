@@ -196,7 +196,7 @@ function getUrlSearch(params) {
 
         url.ak = `https://www.airasia.com/select/vi/vn/${origin}/${destination}/${sd.format('YYYY-MM-DD')}/${isoneway ? 'N' : ed.format('YYYY-MM-DD')}/${adults}/${children}/${infants}/${isoneway ? 'O' : 'R'}/${promo === '' ? 'N':promo}/VND/SC`;
 
-        url.tr = `https://makeabooking.flyscoot.com/book/Flight/Select?${$.param(tr_params)}&utm_source=salecycle&utm_medium=email&utm_campaign=cycle1`;
+        url.tr = `https://makeabooking.flyscoot.com/Book/Flight?${$.param(tr_params)}`;
 
         url.info = origin + ' ' + destination + ' ' + sd.format('DD-MM-YYYY') + (isoneway ? '' : ' ' + ed.format('DD-MM-YYYY')) + ' ' + adults + 'AD' + (children !== '0' ? ' ' + children + 'CH' : '') + (infants !== '0' ? ' ' + infants + 'IN' : '');
 
