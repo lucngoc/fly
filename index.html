@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <title>Vé máy bay</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+    <link rel="stylesheet" href="dist/caleran.min.css">
+    <link rel="stylesheet" href="dist/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row top40">
+            <div class="col">
+                <div class="search-area">
+                    <label class="text-uppercase top10">Tìm chuyến bay</label>
+                    <div class="form-row">
+                        <div class="form-group chang-di col">
+                            <select class="form-control selectpicker search-picker" id="origin" data-live-search="true" title="Điểm đi">
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-link mb-3 col-1" id="hoan-doi"><i class="fas fa-exchange-alt"></i></button>
+                        <div class="form-group chang-ve col" style=" margin-right: 5px; ">
+                            <select class="form-control selectpicker search-picker" id="destination" data-live-search="true" title="Điểm đến">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group ngay-bay">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span id="trip-type">Khứ hồi</span>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control caleran" id="date" readonly="true" placeholder="Ngày bay" data-toggle="tooltip" data-placement="top" title="Âm lịch" />
+                    </div>
+                    <div class="form-row so-luong top15">
+                        <div class="col form-group nguoi-lon">
+                            <select class="form-control selectpicker" id="adults" data-show-subtext="true" data-live-search="true" data-size="9">
+                            </select>
+                        </div>
+                        <div class="col form-group tre-em">
+                            <select class="form-control selectpicker" id="children" data-show-subtext="true">
+                            </select>
+                        </div>
+                        <div class="col form-group em-be">
+                            <select class="form-control selectpicker" id="infants" data-show-subtext="true">
+                            </select>
+                        </div>
+                        <div class="col-4 ma-khuyen-mai">
+                            <input type="text" class="form-control" id="promo-code" placeholder="Promo code" />
+                        </div>
+                    </div>
+                    <div class="form-row" style=" margin-left: 0px; margin-right: 0px; ">
+                        <div class="btn-group btn-group-toggle" id="airline-select" data-toggle="buttons" role="group" style=" width: 100%; ">
+                        </div>
+                    </div>
+                    <div class="form-row top15 bot15">
+                        <div class="col">
+                            <button type="button" class="btn btn-outline-primary" id="flight-search">Tìm kiếm</button>
+                        </div>
+                    </div>
+                    <div class="form-row bot20 user-area" style="padding-right: 5px; padding-left: 5px;">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="showVJFare1" data-toggle="collapse" href="#collapseVJFare1" role="button" aria-expanded="false" aria-controls="collapseVJFare1">
+                            <label class="form-check-label" for="showVJFare1">
+                                VJ Leg 1
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="showVJFare2" data-toggle="collapse" href="#collapseVJFare2" role="button" aria-expanded="false" aria-controls="collapseVJFare2">
+                            <label class="form-check-label" for="showVJFare2">
+                                VJ Leg 2
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-area">
+                    <div class="collapse top10" id="collapseVJFare1" style="width: 100%">
+                        <div class="card card-body">
+                            <p>
+                                <span class="card-title" id="VJtitle1"></span>
+                                <span class="card-title chuot" id="reloadVJ1"><i class="fas fa-sync"></i> Reload</span>
+                            </p>
+                            <div id="VJfare1"></div>
+                        </div>
+                    </div>
+                    <div class="collapse top10" id="collapseVJFare2" style="width: 100%">
+                        <div class="card card-body">
+                            <p>
+                                <span class="card-title" id="VJtitle2"></span>
+                                <span class="card-title chuot" id="reloadVJ2"><i class="fas fa-sync"></i> Reload</span>
+                            </p>
+                            <div id="VJfare2"></div>
+                        </div>
+                        <hr class="user-area">
+                    </div>
+                </div>
+                <hr>
+                <div class="open-area bot20">
+                    <label class="text-uppercase top10">QUẢN LÝ ĐẶT CHỖ</label>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <input type="text" class="form-control" id="open-code" placeholder="Mã đặt chỗ">
+                        </div>
+                        <div class="form-group col">
+                            <input type="text" class="form-control" id="open-lastname" placeholder="Họ hành khách">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-4" style=" padding-top: 8px; ">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="checkin-code">
+                                <label class="form-check-label" for="checkin-code">Check-in</label>
+                            </div>
+                        </div>
+                        <div class="col-8 text-right">
+                            <button type="button" class="btn btn-outline-primary" id="open-vn">VNA</button>
+                            <button type="button" class="btn btn-outline-primary" id="open-bav">BAV</button>
+                            <button type="button" class="btn btn-outline-primary" id="down-bav">BAV+</i></button>
+                            <button type="button" class="btn btn-outline-primary" id="open-vj">VJ</button>
+                        </div>
+                    </div>
+                    <div class="collapse top10" id="vj-extra" style="width: 100%">
+                        <div class="card card-body">
+                            <p id="vj-info">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="collapse top15" id="collapseRes" style="width: 100%">
+                        <div class="ticket-area user-area"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js" integrity="sha256-AdQN98MVZs44Eq2yTwtoKufhnU+uZ7v2kXnD5vqzZVo=" crossorigin="anonymous"></script>
+    <script src="dist/caleran.min.js"></script>
+    <script src="dist/function.js"></script>
+    <script src="dist/search.js"></script>
+</body>
+
+</html>
