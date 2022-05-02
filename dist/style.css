@@ -1,0 +1,145 @@
+body {
+    min-width: 360px;
+    margin: auto;
+}
+
+.optgroup-1.selected.active,
+.bootstrap-select .dropdown-toggle:focus {
+    outline: none !important;
+}
+
+.caret {
+    display: none;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+}
+
+.btn-light:hover {
+    background: white;
+}
+
+.top10 {
+    margin-top: 10px
+}
+
+.top15 {
+    margin-top: 15px
+}
+
+.bot10 {
+    margin-bottom: 10px
+}
+
+.bot20 {
+    margin-bottom: 20px
+}
+
+.bot15 {
+    margin-bottom: 15px
+}
+
+.top20 {
+    margin-top: 20px
+}
+
+.bot40 {
+    margin-bottom: 40px
+}
+
+.top40 {
+    margin-top: 40px
+}
+
+#date,
+.input-group-text {
+    background: #ffffff;
+}
+
+#trip-type {
+    cursor: pointer;
+    width: 70px;
+    text-align: center;
+}
+
+#hoan-doi {
+    border-top: 1px solid #ced4da;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0px;
+    border-left: none;
+    border-right: none;
+}
+
+.so-luong .nguoi-lon {
+    padding-right: 1px;
+}
+
+.so-luong .tre-em {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.so-luong .em-be {
+    padding-left: 1px;
+}
+
+.chang-di {
+    padding-right: 0px !important;
+}
+
+.chang-ve {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.chang-di button {
+    border: 1px solid #ced4da;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border-right: none;
+    background: white;
+}
+
+.chang-ve button {
+    border: 1px solid #ced4da;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-left: none;
+    background: white;
+}
+
+.so-luong button {
+    border: 1px solid #ced4da;
+    background: white;
+}
+
+#flight-search {
+    width: 100%;
+}
+
+.chuot {
+    cursor: pointer;
+}
+
+#collapseVJFare p {
+    margin-bottom: 0px;
+}
+
+#reloadVJ1,
+#reloadVJ2 {
+    color: rgb(0, 123, 255);
+}
