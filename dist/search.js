@@ -375,7 +375,7 @@ $('#open-bav').click(() => {
 
     if (check_input('bav')) {
         if ($('#checkin-code').is(':checked'))
-            window.open(`https://www.bambooairways.com/WebCheckIn/web/checkin?mode=webCheckIn&locale=vi&access_token=&pnrNumber=${code}&firstName=&lastName=${last_name}`);
+            window.open(`https://www.bambooairways.com/WebCheckIn/web/checkin`);
         else
             window.open(`https://www.bambooairways.com/reservation/ibe/modify?locale=vi&wvm=WVMD&channel=PB&confirmationCode=${code}&mode=UAVItinInter`);
     } else {
@@ -395,6 +395,19 @@ $('#down-bav').click(() => {
     }
 })
 
+$('#open-vu').click(() => {
+    var code = $('#open-code').val().trim(),
+        last_name = $('#open-lastname').val().trim().toUpperCase();
+
+    if (check_input('vu')) {
+        window.open(`https://booking.vietravelairlines.vn/vi/manage?confirmationNumber=${code}&bookingLastName=${last_name}`);
+    } else {
+        $('#open-vu').addClass('btn-outline-danger').tooltip('hide')
+            .attr('data-original-title', 'Kiểm tra dữ liệu')
+            .tooltip('show');
+    }
+})
+
 
 $('.open-area button').mouseout(() => {
     $('.open-area button').removeClass('btn-outline-danger').tooltip('hide')
@@ -408,7 +421,9 @@ $('#open-code').focus(() => {
 $('#checkin-code').click(() => {
     if ($('#checkin-code').is(':checked')) {
         $('#down-bav').hide();
+        $('#open-vu').hide();
     } else {
+        $('#open-vu').show();
         $('#down-bav').show();
     }
 })
